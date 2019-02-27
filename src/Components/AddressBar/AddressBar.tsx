@@ -20,20 +20,30 @@ const Container = styled.input`
 `;
 
 interface IProps {
+  /**
+   * The text value of addressbar
+   */
   value: string;
-  onBlur: any;
+  /**
+   * Function onBlur
+   */
+  onBlur: () => void;
+  /**
+   * Input name
+   */
   name: string;
+  /**
+   * function onChange
+   */
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Placeholder
+   * @default "TYPE ADDRESS"
+   */
   placeholder?: string;
 }
 
-const AddressBar: React.SFC<IProps> = ({
-  value,
-  onBlur,
-  onChange,
-  name,
-  placeholder,
-}) => (
+const AddressBar = ({ value, onBlur, onChange, name, placeholder }: IProps) => (
   <Container
     value={value}
     onBlur={onBlur}
