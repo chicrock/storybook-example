@@ -23,18 +23,32 @@ const Container = styled.input`
 `;
 
 interface IProps {
+  /**
+   * Text of the Button
+   */
   value: string;
-  onClick: any;
+  /**
+   * Function that will be called when this button is clicked
+   */
+  onClick: () => void;
+  /**
+   * Diabled the button
+   * @default false
+   */
   disabled?: boolean;
+  /**
+   * The className of button
+   * @default ''
+   */
   className?: string;
 }
 
-const Button: React.SFC<IProps> = ({
+const Button = ({
   value,
   onClick,
   disabled = false,
-  className,
-}) => (
+  className = "",
+}: IProps) => (
   <Container
     value={value}
     onClick={onClick}
